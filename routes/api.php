@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\BudgetController;
 use App\Http\Controllers\HelloWorld;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -17,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/helloworld', HelloWorld::class);
+
+// Budgets
+Route::prefix('/budgets')->name('budgets.')->group(function(){
+    Route::get('/', [BudgetController::class, 'index'])->name('index');
+    Route::post('/', [BudgetController::class, 'store'])->name('store');
+});
