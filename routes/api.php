@@ -16,4 +16,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/helloword', HelloWorld::class);
+Route::get('/helloworld', HelloWorld::class);
